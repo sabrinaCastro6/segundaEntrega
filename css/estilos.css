@@ -1,0 +1,251 @@
+* {
+    padding: 0;
+    margin: 0;
+
+}
+/*mobilefirst*/
+
+body{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+
+}
+.listita{
+    height: 350;
+    width: 350 ;
+}
+
+header{
+    font-size: large;
+    display: grid;
+    justify-content: center;
+
+}
+header, h2{
+    color: rgb(244, 251, 246);
+}
+nav ul li{
+    list-style-type: none;
+}
+nav ul, .ad, article, aside{
+    color: rgb(255, 0, 191);
+    border: 3px solid white;
+}
+a{
+    color: rgb(250, 249, 248);
+    text-decoration: none;
+
+}
+footer{
+    padding: 3em;
+    background: linear-gradient(0deg, rgba(0,255,229,1) 0%, rgba(45,65,253,1) 100%);
+    margin-bottom: 0;
+    margin: 1.5em; 
+}
+
+/*declaro areas de la grilla*/
+
+header{
+    grid-area: header;
+}
+.contenido{
+    grid-area: contenido;
+}
+
+nav{
+    grid-area: nav;
+}
+aside{
+    grid-area: sidebar;
+}
+.ad{
+    grid-area: ad;
+}
+.galeria-grid{
+    grid-area: galeria;
+}
+
+footer{
+    grid-area: footer;
+}
+
+.envoltura{
+    background: linear-gradient(0deg, rgba(0,114,255,1) 0%, rgba(253,45,247,1) 100%);
+     margin-bottom: 1.5em;
+     display: grid;
+     gap: 20px;
+     grid-template-areas: 
+    "header"
+    "nav"
+    "contenido"
+    "sidebar"
+    "ad"
+    "galeria"
+    "footer"
+    ;
+}
+.padre{
+    background-color: rgb(50, 0, 35);
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr ;
+    justify-items: center;
+    gap: 15px;
+}
+img{
+    width: 300px;
+    height: 250px;
+    border: 8px rgb(127, 0, 76);
+}
+
+
+/*mi primer mediaquery*/
+
+
+@media (min-width:500px){
+
+    .envoltura{
+        margin: 0px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "header header" 
+        "nav      nav"
+        "sidebar  contenido"
+        "ad         ad"
+        "galeria    galeria"
+        "footer   footer";
+    }
+    nav ul{
+        display: flex;
+        justify-content: space-between;
+    }
+    nav ul, .ad, article, aside{
+        color: rgb(196, 196, 190);
+        border: 3px solid red;
+    }
+    img{
+        width: 350px;
+        height: 300px;
+    }
+    footer{
+        margin-top: 0;
+
+    }
+
+    p{
+        background-color: rgb(181, 230, 244);
+        
+    }
+}
+
+
+@media (min-width:768px){
+    .envoltura{
+        background-color: rgb(248, 8, 92);
+       background: linear-gradient();
+        margin-bottom: 1.5em;
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-areas: 
+        "header  header         header  "
+        "nav  contenido  ad     siderbar "
+        " galeria galeria galeria"
+        "footer  footer footer"
+        ;
+
+    }
+    
+
+
+    nav ul {
+         display: flex;
+        justify-content: space-between;
+        border: 2px solid black;
+    }
+    nav ul, .ad, article, aside{
+        color: rgb(240, 222, 122);
+        border: 3px solid rgb(8, 8, 8);
+    }
+    .galeria-grid{
+        background-color: rgb(3, 5, 106);
+
+    }
+    .padre{
+        background-color: rgb(224, 47, 255);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        margin: 3em;
+
+    }
+    img{
+        width: 200px;
+        height: 150px;
+        border: 5px solid salmon;
+    }
+    footer{
+        margin-top: 1.5em;
+        background-color: black;
+    }
+    p{
+        background-color: rgb(103, 3, 88);
+        
+    }
+}
+
+@media(mid-width:1024px){
+    body{
+        background-color: rgb(13, 14, 14);
+    }
+    .envoltura{
+        background-color:rgb(255, 0, 153);
+    }
+    .padre{
+        padding: 1.5em;
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+        margin: 0;
+
+    }
+
+    
+    img{
+        width: 470px;
+        height: 400px;
+        margin-top: 20px;
+
+    }
+
+    p {
+        border: rgb(209, 99, 99);
+        text-decoration-color: rgb(233, 144, 206);
+        font-family: poppins;
+    }
+
+
+    .box{
+        border-radius: 6px;
+        height: px;
+        width: 80px;
+        margin: 60px auto;
+    }
+    .box{
+        background-color: blueviolet;
+    }
+
+.box:hover{
+    transform: scale(4);
+}
+
+    .box{
+        transition-property: all;
+        transition-duration: 4s;
+
+    }
+
+    
+}
